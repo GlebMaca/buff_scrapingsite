@@ -1,0 +1,181 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Tables {% endblock title %}
+
+{% block content %}
+
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          
+            <div class="row">
+              
+              {% if good_orderlist %}
+                <div class="col-md-4 col-lg-4 cols-sm-6 col-xl-12">
+                  {% for order in good_orderlist %}
+                  <div class="card card-stats card-margin"  data-item="{{order.order_id}}">
+                    <div class="card-body card-body-main ">
+                      <div class="row">
+                        <div class="col-1 img-col">
+                          <a href="#" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                            <img alt="Image placeholder" src="{{order.icon_url}}" >
+                          </a>
+                         
+                        </div>
+                        <div class="col-7 text-left main-col" >
+                          <div class="card-title text-uppercase order-title">{{order.title}}</div>                        
+                          <h6><span class="h6 font-weight-bold mb-0 text-success"> ¥{{order.price}}X{{order.num}}= ¥{{order.total}}</span></h6> 
+                        </div>
+                        <div class="col-3 text-left middle-col">
+                          <div><span class="h6 card-title text-uppercase"> ¥{{order.price}}&nbsp;</span>
+                            <span class="h7 font-weight-bold mb-0 text-muted ">X{{order.num}}</span></div>
+                          <div><span class="h6 card-title text-uppercase text-muted"> ¥{{order.second_price}}&nbsp;</span></div>
+                          <div><span class="h7 card-title text-uppercase"> ¥{{order.sell_min_price}}&nbsp;</span></div>                          
+
+                        </div>
+                        <div class="col-1 text-left btn-col">
+                          
+                          <div><a href=# > 
+                            <i class="fa fa-check-square" style="font-size: 30px;"></i>
+                          </a></div>
+                          <div><a href=# data-target="#my_modal" data-toggle="modal" class=" btn-cancel identifyingClass" data-id="{{order.order_id}}" data-title="{{order.title}}"> 
+                            <i class="fa fa-trash" style="font-size: 30px;color:red;"></i>
+                          </a>
+                        </div>
+
+                         
+                        </div>
+                        
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                  {% endfor %} 
+                </div>              
+              {% endif %}
+              {% if lower_orderlist %}
+              <div class="col-md-4 col-lg-4 cols-sm-6 col-xl-12 ">
+                {% for order in lower_orderlist %}
+                <div class="card card-stats card-margin"  data-item="{{order.order_id}}">
+                  <div class="card-body card-body-main ">
+                    <div class="row">
+                      <div class="col-1 img-col">
+                        <a href="#" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                          <img alt="Image placeholder" src="{{order.icon_url}}" >
+                        </a>
+                       
+                      </div>
+                      <div class="col-7 text-left main-col" >
+                        <div class="card-title text-uppercase order-title">{{order.title}}</div>                        
+                        <h6><span class="h6 font-weight-bold mb-0 text-success"> ¥{{order.price}}X{{order.num}}= ¥{{order.total}}</span></h6> 
+                      </div>
+                      <div class="col-3 text-left middle-col">
+                        <div><span class="h6 card-title text-uppercase"> ¥{{order.price}}&nbsp;</span>
+                          <span class="h7 font-weight-bold mb-0 text-muted ">X{{order.num}}</span></div>
+                        <div><span class="h6 card-title text-uppercase text-warning"> ¥{{order.second_price}}&nbsp;</span></div>
+                        <div><span class="h7 card-title text-uppercase"> ¥{{order.sell_min_price}}&nbsp;</span></div>                          
+
+                      </div>
+                      <div class="col-1 text-left btn-col">
+                        
+                        <a href=# data-target="#my_modal" data-toggle="modal" class=" btn-cancel identifyingClass_edit" data-goods_id="{{order.goods_id}}"  data-id="{{order.order_id}}" data-title="{{order.title}}"> 
+                          <i class="fa fa-edit" style="font-size: 30px;color:green;"></i>
+                        </a>
+                        <a href=# data-target="#my_modal" data-toggle="modal" class=" btn-cancel identifyingClass" data-id="{{order.order_id}}" data-title="{{order.title}}"> 
+                          <i class="fa fa-trash" style="font-size: 30px;color:red;"></i>
+                        </a>
+                       
+                      </div>
+                      
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+                {% endfor %} 
+              </div>              
+              {% endif %}
+              {% if pro_orderlist %}
+              <div class="col-md-4 col-lg-4 cols-sm-6 col-xl-12">
+                {% for order in pro_orderlist %}
+                <div class="card card-stats card-margin"  data-item="{{order.order_id}}">
+                  <div class="card-body card-body-main ">
+                    <div class="row">
+                      <div class="col-1 img-col">
+                        <a href="#" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                          <img alt="Image placeholder" src="{{order.icon_url}}" >
+                        </a>
+                       
+                      </div>
+                      <div class="col-7 text-left main-col" >
+                        <div class="card-title text-uppercase order-title">{{order.title}}</div>                        
+                        <h6><span class="h6 font-weight-bold mb-0 text-success"> ¥{{order.price}}X{{order.num}}= ¥{{order.total}}</span></h6> 
+                      </div>
+                      <div class="col-3 text-left middle-col">
+                        <div><span class="h6 card-title text-uppercase"> ¥{{order.price}}&nbsp;</span>
+                          <span class="h7 font-weight-bold mb-0 text-muted ">X{{order.num}}</span></div>
+                        <div><span class="h6 card-title text-uppercase text-warning"> ¥{{order.second_price}}&nbsp;</span></div>
+                        <div><span class="h7 card-title text-uppercase"> ¥{{order.sell_min_price}}&nbsp;</span></div>                          
+
+                      </div>
+                      <div class="col-1 text-left btn-col">
+                        <div>
+                        <a href=# data-target="#my_modal" data-toggle="modal" class=" btn-cancel identifyingClass_edit"  data-goods_id="{{order.goods_id}}" data-id="{{order.order_id}}" data-title="{{order.title}}"> 
+                          <i class="fa fa-edit" style="font-size: 30px;color:green;"></i>
+                        </a>
+                        </div>
+                        <div>
+                        <a href=# data-target="#my_modal" data-toggle="modal" class=" btn-cancel identifyingClass" data-id="{{order.order_id}}" data-title="{{order.title}}"> 
+                          <i class="fa fa-trash" style="font-size: 30px;color:red;"></i>
+                        </a>
+                        </div>
+                       
+                      </div>
+                      
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+                {% endfor %} 
+              </div>              
+              {% endif %}
+
+            </div>
+          
+           
+         
+        </div>
+      </div>
+      <div class="modal fade main-modal" id="my_modal" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
+        <h2 >Modal</h2>
+        
+        <div class="modal-dialog" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header"> <h4 class="modal-title text-danger" id="myModalLabel">Warning</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                  
+                </div>
+                <div class="modal-body">
+                  <h2 class="h2-title"> </h2>            
+        
+                </div>
+                <div class="modal-footer">
+                    <button id="close-modal" type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" id="btn_order_cancel"  data-dismiss="modal" >Delete</button>
+                    <button type="button" class="btn btn-primary" id="btn_order_edit"  data-dismiss="modal" >Edit</button>
+                </div>
+            </div>
+        </div>
+      </div>
+  
+
+    </div>
+    
+    
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

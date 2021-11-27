@@ -1,0 +1,45 @@
+.main-modal{
+    display:none;
+  }
+.order-title{
+  display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
+
+
+}
+.img-col{
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+  padding-top:15px;
+}
+.main-col{
+  
+  padding-top:15px;
+}
+.middle-col{
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+}
+.btn-col{
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+  padding-top:10px;
+}
+.card-body-main{
+  padding-top:2px !important;
+  padding-bottom:2px !important;
+}
+.card-margin{
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+.order-panel{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
